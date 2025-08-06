@@ -1,0 +1,42 @@
+body {
+  font-family: "Vollkorn", serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-variant-ligatures: discretionary;
+}
+
+.body_02 {
+  font-family: "Recursive", serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1;
+  max-inline-size: 40ch;
+}
+
+/* 2. Headings on a modular scale (major third, 1.25×) */
+h1 { font-size: clamp(2.5rem, 1.8rem + 2vw, 3.5rem); line-height: 1.2; }
+
+h2 {
+    font-size: clamp(1.95rem, 1.5rem + 1.2vw, 2.5rem);
+    line-height: 1.3;
+    font-family: "Vollkorn", serif;
+    font-feature-settings: 'dlig';
+}
+
+h3 { font-size: clamp(1.56rem, 1.3rem + .6vw, 2rem);   line-height: 1.35; }
+
+/* layout.css */
+.container{
+  max-inline-size: 65ch;          /* stops lines from getting too long   */
+  margin-inline: auto;            /* centers block in the viewport       */
+  padding-inline: 1rem;           /* breathing room at narrow widths     */
+}
+
+/* utilities.css (or near the bottom of base.css) */
+.flow > * + * {
+  margin-block-start: var(--gap, 1rem); /* vertical rhythm */
+}
+
+:root { --gap: clamp(.75rem, 2vw, 1.5rem); }
+
